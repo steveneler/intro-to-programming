@@ -1,27 +1,26 @@
-namespace CSharpSyntax
+namespace CSharpSyntax;
+
+public class UnitTest1
 {
-    public class UnitTest1
+    [Fact]
+    public void TestingTheAdditionOperatorOnIntegers()
     {
-        [Fact]
-        public void TestingTheAdditionOperatorOnIntegers()
-        {
-            //Given
-            int a = 10, b = 20, answer;
+        //Given
+        int a = 10, b = 20, answer;
 
-            //When
-            answer = a + b;
+        //When
+        answer = a + b;
 
-            //Then
-            Assert.Equal(30, answer);
-        }
-
-        [Theory]
-        [InlineData(10, 20, 30)]
-        public void CanAddAnyTwoIntegers(int a, int b, int expected)
-        {
-            int answer = a + b;
-            Assert.Equal(expected, answer);
-        }
-
+        //Then
+        Assert.Equal(30, answer);
     }
+
+    [Theory]
+    [InlineData(10, 20, 30)]
+    public void CanAddAnyTwoIntegers(int a, int b, int expected)
+    {
+        int answer = a + b;
+        Assert.Equal(expected, answer);
+    }
+
 }
