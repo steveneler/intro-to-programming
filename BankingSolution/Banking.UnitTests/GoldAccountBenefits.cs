@@ -10,7 +10,7 @@ public class GoldAccountBenefits
     [Fact]
     public void GetBonusOnDeposit()
     {
-        var account = new BankAccount();
+        var account = new GoldAccount();
         var openingBalance = account.GetBalance();
         var amountToDeposit = 100M;
         var expectedBonus = 10M;
