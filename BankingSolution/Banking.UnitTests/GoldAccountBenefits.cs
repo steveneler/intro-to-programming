@@ -1,16 +1,16 @@
 ﻿
 
 using Banking.Domain;
+using Banking.UnitTests.TestDoubles;
 
 namespace Banking.UnitTests;
 
 public class GoldAccountBenefits
 {
-
     [Fact]
     public void GetBonusOnDeposit()
     {
-        var account = new GoldAccount();
+        var account = new BankAccount(new StandardBonusCalculator());
         var openingBalance = account.GetBalance();
         var amountToDeposit = 100M;
         var expectedBonus = 10M;
@@ -19,7 +19,6 @@ public class GoldAccountBenefits
 
         Assert.Equal(openingBalance + amountToDeposit + expectedBonus,
             account.GetBalance());
+
     }
-
-
 }
